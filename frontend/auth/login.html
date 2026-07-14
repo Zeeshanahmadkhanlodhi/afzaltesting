@@ -1,33 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" href="../style.css" />
+    <title>ZamaBook – Log in or sign up</title>
+    <link rel="stylesheet" href="../css/auth.css" />
   </head>
-  <body>
-    <form action="../../backend/auth/login.php" method="POST">
-      <h2>Login</h2>
+  <body class="auth-page">
+    <div class="auth-wrap">
+      <div class="auth-brand">
+        <h1 class="auth-brand__logo">zamaBook</h1>
+        <p class="auth-brand__tagline">
+          ZamaBook helps you connect and share with the people in your life.
+        </p>
+      </div>
 
-      <input
-        type="email"
-        name="EmailAddress"
-        id="EmailAddress"
-        placeholder="Enter your email"
-        required />
+      <div>
+        <div class="auth-card">
+          <form action="../../backend/auth/login.php" method="POST">
+            <input
+              type="email"
+              name="EmailAddress"
+              id="EmailAddress"
+              placeholder="Email address"
+              required
+              autocomplete="email"
+            />
+            <input
+              type="password"
+              name="Password"
+              id="Password"
+              placeholder="Password"
+              required
+              autocomplete="current-password"
+            />
+            <button type="submit" class="btn btn-primary" id="login">Log in</button>
+            <a href="#" class="auth-forgot">Forgotten password?</a>
+            <hr class="auth-divider" />
+            <a href="register.html" class="btn-create">Create new account</a>
+          </form>
+        </div>
+        <p class="auth-create-page">
+          <a href="register.html">Create a Page</a> for a celebrity, brand or business.
+        </p>
+      </div>
+    </div>
 
-      <input
-        type="password"
-        name="Password"
-        id="Password"
-        placeholder="Enter your password"
-        required />
-
-      <input type="submit" id="login" value="Login" />
-
-      <p>Don't have an account?</p>
-      <a href="register.html">Sign Up</a>
-    </form>
+    <footer class="auth-footer">
+      <div class="auth-footer__inner">
+        <div class="auth-footer__links">
+          <a href="#">English (UK)</a>
+          <a href="#">Español</a>
+          <a href="#">Français</a>
+          <a href="#">Deutsch</a>
+          <a href="#">Italiano</a>
+        </div>
+        <p class="auth-footer__copy">ZamaBook © 2026</p>
+      </div>
+    </footer>
   </body>
 </html>

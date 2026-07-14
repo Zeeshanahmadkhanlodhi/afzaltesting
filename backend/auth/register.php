@@ -1,14 +1,7 @@
 <?php
-  $server = "localhost";
-  $username = "root";
-  $database = "facebook";
-  $password = "";
+ require_once '../config.php';
 
-  $con = mysqli_connect($server , $username , $password ,$database );
-  
-  if($con == true){
-    echo "connection success";
-  }
+
     
   $abc_username = $_POST['UserName'];
   $abc_email = $_POST['EmailAdress'];
@@ -18,11 +11,12 @@
   VALUES ('$abc_username', '$abc_email', '$password' , current_timestamp())";
 
    
-if ($con->query($sql) == true){
-    echo "Successfully inserted";
+if ($conn->query($sql) == true){
+    header("Location: ../feed.php");  
+
 }else{
-    echo "Error" . mysqli_error($con);
+    echo "Error" . mysqli_error($conn);
 }
 
-$con->close();
+$conn->close();
 ?>

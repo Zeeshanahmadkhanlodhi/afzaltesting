@@ -1,25 +1,15 @@
 <?php
  session_start();
 
+ require_once '../config.php';
 
-
-$server = "localhost";
-$username = "root";
-$database = "facebook";
-$password = "";
-
-$con1 = mysqli_connect($server, $username, $password, $database);
-
-if (!$con1) {
-    die("Connection failed: " . mysqli_connect_error());
-}
 
 $EmailAddress = $_POST['EmailAddress'];
 $Password = $_POST['Password'];
 
 $sql = "select * from users where email = '$EmailAddress'";
 
-$result = mysqli_query($con1, $sql);
+$result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
 
@@ -33,7 +23,7 @@ if (mysqli_num_rows($result) > 0) {
 
        
         $_SESSION["user_id"] = $user["User_id"];
-        header("Location: home.php");
+        header("Location: ../feed.php");
         exit();
     } else {
 
@@ -47,6 +37,6 @@ if (mysqli_num_rows($result) > 0) {
 
 }
 
-mysqli_close($con1);
+mysqli_close($conn);
 ?>
 

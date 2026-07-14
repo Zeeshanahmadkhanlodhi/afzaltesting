@@ -40,16 +40,11 @@ abc_username.addEventListener("input" , function(){
 
 confirm_password.addEventListener("input" , function(){
     if(password.value == confirm_password.value){
-       confirm_password.style.borderColor = "green"
-       
-       console.log("success");
-       
-
-        
+       confirm_password.classList.remove("invalid");
+       confirm_password.classList.add("valid");
     }else{
-       confirm_password.style.borderColor = "red"
-       console.log("not success");
-       
+       confirm_password.classList.remove("valid");
+       confirm_password.classList.add("invalid");
     }
     checkform()
 }

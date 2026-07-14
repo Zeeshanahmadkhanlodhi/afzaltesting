@@ -1,37 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registeration</title>
-    <link rel="stylesheet" href="../style.css" />
+    <title>Sign up for ZamaBook</title>
+    <link rel="stylesheet" href="../css/auth.css" />
   </head>
-  <body>
-    <form action="../../backend/auth/register.php" method="post">
-      <input
-        type="text"
-        required
-        name="UserName"
-        id="abc_username"
-        placeholder="Enter your name" />
-      <input
-        type="email"
-        required
-        name="EmailAdress"
-        id="abc_email"
-        placeholder="Enter your Email" />
-      <input
-        type="password"
-        name="Password"
-        id="Password"
-        placeholder="Enter your Password" />
-      <input
-        type="password"
-        name="ConfirmPassword"
-        id="ConfirmPassword"
-        placeholder="Confirm your password" />
-      <input id="submit" type="submit" value="Submit" disabled />
-    </form>
+  <body class="auth-page">
+    <div class="auth-wrap auth-wrap--center">
+      <div class="auth-brand">
+        <a href="login.html" class="auth-brand__logo">zamaBook</a>
+      </div>
+
+      <div class="auth-card auth-card--register">
+        <div class="auth-card__header">
+          <h1>Create a new account</h1>
+          <p>It's quick and easy.</p>
+        </div>
+
+        <form action="../../backend/auth/register.php" method="post">
+          <input
+            type="text"
+            required
+            name="UserName"
+            id="abc_username"
+            placeholder="Username"
+            autocomplete="username"
+          />
+          <input
+            type="email"
+            required
+            name="EmailAdress"
+            id="abc_email"
+            placeholder="Email address"
+            autocomplete="email"
+          />
+          <input
+            type="password"
+            name="Password"
+            id="Password"
+            placeholder="New password"
+            required
+            autocomplete="new-password"
+          />
+          <input
+            type="password"
+            name="ConfirmPassword"
+            id="ConfirmPassword"
+            placeholder="Confirm password"
+            required
+            autocomplete="new-password"
+          />
+
+          <p class="auth-terms">
+            By clicking Sign Up, you agree to our
+            <a href="#">Terms</a>, <a href="#">Privacy Policy</a> and
+            <a href="#">Cookies Policy</a>.
+          </p>
+
+          <button type="submit" id="submit" class="btn btn-success" disabled>
+            Sign Up
+          </button>
+        </form>
+
+        <a href="login.html" class="auth-back">Already have an account?</a>
+      </div>
+    </div>
+
+    <footer class="auth-footer">
+      <div class="auth-footer__inner">
+        <div class="auth-footer__links">
+          <a href="login.html">Log in</a>
+          <a href="register.html">Sign up</a>
+          <a href="#">Help</a>
+          <a href="#">About</a>
+        </div>
+        <p class="auth-footer__copy">ZamaBook © 2026</p>
+      </div>
+    </footer>
+
     <script src="../js/script.js"></script>
   </body>
 </html>

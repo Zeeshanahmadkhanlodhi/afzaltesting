@@ -1,16 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>facebook login</title>
-    <link rel="stylesheet" href="../frontend/style.css" />
+    <title>ZamaBook</title>
+    <link rel="stylesheet" href="css/auth.css" />
   </head>
-  <body>
-    <div class="welcome">
-      <h2>Welcome to facebook</h2>
+  <body class="auth-page">
+    <div class="landing">
+      <h1 class="auth-brand__logo">zamaBook</h1>
+      <p class="auth-brand__tagline">
+        Connect and share with the people in your life.
+      </p>
+      <div class="landing-actions">
+        <a href="auth/login.html" class="btn btn-primary">Log in</a>
+        <a href="auth/register.html" class="btn btn-outline">Create new account</a>
+      </div>
     </div>
-    <button id="login"><a href="auth/login.html">Login</a></button>
-    <button id="signup"><a href="auth/register.html">Sign up</a></button>
+
+    <footer class="auth-footer">
+      <div class="auth-footer__inner">
+        <p class="auth-footer__copy">ZamaBook © 2026</p>
+      </div>
+    </footer>
   </body>
 </html>
